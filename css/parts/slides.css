@@ -63,9 +63,9 @@
 	gap: 2em;
 }
 
-/* .slide:nth-of-type(1) {
-	background-image: url(/images/bgs/triangles-w-logo-1.svg);
+.slide {
+	background-image: url(/images/bgs/bg-triangles-right-bottom-corner.svg);
 	background-repeat: no-repeat;
-	background-size: 25%;
+	background-size: 25dvw;
 	background-position: bottom 0 right 0;
-} */
+}

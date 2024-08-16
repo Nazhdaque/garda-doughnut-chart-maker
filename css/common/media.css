@@ -1,7 +1,7 @@
 /* |||||||||| |||||||||| |||||||||| |||||||||| xl */
 @media (width <= 1400px) {
 	.chart {
-		--chart-w: auto;
+		--chart-w: var(--chart-size);
 		--chart-h: var(--chart-size);
 
 		grid-auto-flow: row;
@@ -10,11 +10,25 @@
 	.xl-order-0 {
 		order: 0;
 	}
+
+	.slide {
+		background-image: none;
+	}
 }
 
 /* |||||||||| |||||||||| |||||||||| |||||||||| sm */
 @media (width <= 768px) {
+	.chart {
+		--chart-size: 75dvw;
+	}
 	.sm-d-none {
 		display: none;
+	}
+}
+
+/* |||||||||| |||||||||| |||||||||| |||||||||| xs */
+@media (width <= 576px) {
+	.chart {
+		--chart-size: 90dvw;
 	}
 }
