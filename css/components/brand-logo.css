@@ -1,0 +1,16 @@
+.brand-logo {
+	--logo-size: 14rem;
+
+	display: block;
+	max-width: var(--logo-size);
+	min-width: var(--logo-size);
+	aspect-ratio: var(--logo-x) / var(--logo-y);
+	outline: none;
+	overflow: hidden;
+	margin: 0.5rem 0 auto auto;
+	transition: 0.2s scale;
+}
+
+.brand-logo:where(:hover, :focus-visible) {
+	scale: 1.05;
+}

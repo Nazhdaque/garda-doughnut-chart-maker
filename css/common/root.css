@@ -1,0 +1,59 @@
+:root {
+	font-size: clamp(14px, 1dvw + 1dvh + 0.5vmin, 18px);
+	--max-content-width: 100rem;
+
+	/* |||||||||| |||||||||| |||||||||| |||||||||| */
+	--clr-0a: #ffffff;
+	--clr-0a: 0, 0%, 100%;
+	--clr-0b: #2c313b;
+	--clr-0b: 220, 15%, 20%;
+	--clr-0c: #41464f;
+	--clr-0c: 219, 10%, 28%;
+	--clr-1a: #9b4fd6;
+	--clr-1a-h: 274;
+	--clr-1a-s: 62%;
+	--clr-1a-l: 57%;
+	--clr-1a: var(--clr-1a-h), var(--clr-1a-s), var(--clr-1a-l);
+	--clr-1b: #2baae2;
+	--clr-1b-h: 198;
+	--clr-1b-s: 76%;
+	--clr-1b-l: 53%;
+	--clr-1b: var(--clr-1b-h), var(--clr-1b-s), var(--clr-1b-l);
+	--clr-1b-1a: linear-gradient(
+		var(--deg, 30deg),
+		hsl(var(--clr-1b)) 0,
+		hsl(var(--clr-1a)) 100%
+	);
+
+	--clr-2a: #863dc6;
+	--clr-2a: 272, 55%, 51%;
+	--clr-2b: #b657ff;
+	--clr-2b: 274, 100%, 67%;
+	--clr-2c: #dfb5ff;
+	--clr-2c: 274, 100%, 85%;
+	--clr-2d: #0081cc;
+	--clr-2d: 202, 100%, 40%;
+	--clr-2e: #0bbafa;
+	--clr-2e: 196, 96%, 51%;
+	--clr-2f: #b7d8fe;
+	--clr-2f: 212, 97%, 86%;
+	--clr-2g: #1cbab3;
+	--clr-2g: 177, 74%, 42%;
+	--clr-2h: #a4897a;
+	--clr-2h: 21, 19%, 56%;
+	--clr-2i: #f9b232;
+	--clr-2i: 39, 94%, 59%;
+
+	/* |||||||||| |||||||||| |||||||||| |||||||||| */
+	--logo-size: 12rem;
+	--logo-x: 310.52;
+	--logo-y: 49.85;
+	--logo-height: calc((var(--logo-size) / var(--logo-x)) * var(--logo-y));
+
+	--header-top: 1rem;
+	--header-bottom: var(--header-top);
+	--header-height: calc(
+		var(--header-top) + var(--logo-height) + var(--header-bottom)
+	);
+	--main-height: calc(100% - var(--header-height) * 2);
+}

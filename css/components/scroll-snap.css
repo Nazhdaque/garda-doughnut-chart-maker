@@ -1,0 +1,42 @@
+.scroll-snap-inline,
+.scroll-snap-block {
+	display: grid;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+.scroll-snap-inline::-webkit-scrollbar,
+.scroll-snap-block::-webkit-scrollbar {
+	display: none;
+}
+
+.scroll-snap-inline:focus-visible,
+.scroll-snap-block:focus-visible {
+	outline: 2px dashed hsl(var(--clr-1b));
+	outline-offset: 2px;
+}
+
+.scroll-snap-inline > *,
+.scroll-snap-block > * {
+	scroll-snap-align: end;
+	scroll-snap-stop: always;
+}
+
+/* |||||||||| |||||||||| inline */
+.scroll-snap-inline {
+	column-gap: 100%;
+	overflow: auto hidden;
+	overscroll-behavior-x: contain;
+	scroll-snap-type: x mandatory;
+	grid-auto-flow: column;
+	grid-auto-columns: 100%;
+}
+
+/* |||||||||| |||||||||| block */
+.scroll-snap-block {
+	row-gap: 100%;
+	overflow: hidden auto;
+	overscroll-behavior-y: contain;
+	scroll-snap-type: y mandatory;
+	grid-auto-flow: row;
+	grid-auto-rows: minmax(100%, max-content);
+}

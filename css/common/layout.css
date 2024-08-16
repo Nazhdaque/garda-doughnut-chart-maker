@@ -1,0 +1,31 @@
+.layout-body {
+	display: grid;
+	grid-template-rows: min-content 1fr min-content;
+}
+
+.layout-center {
+	display: grid;
+	grid-template-columns: 1fr minmax(min-content, var(--max-content-width)) 1fr;
+	padding-inline: max(1rem, 5vmin);
+
+	overflow-x: hidden;
+	height: 100%;
+}
+
+.layout-center > *:not(.grid-full-width) {
+	grid-column: 2;
+}
+
+.main-header {
+	grid-area: 1 / 1 / 2 / -1;
+}
+
+.main-content {
+	scroll-behavior: smooth;
+	grid-area: 1 / 1 / -1 / -1;
+	counter-reset: slide-counter 0;
+}
+
+.main-footer {
+	grid-area: 3 / 1 / -1 / -1;
+}

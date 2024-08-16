@@ -1,0 +1,63 @@
+[
+	{
+		"title": "Lorem ipsum dolor sit",
+		"values": [17, 32, 25, 68, 72, 45, 53, 25, 9],
+		"legends": [
+			"Magnam consequuntur debitis quia, ducimus sint architecto autem.",
+			"Eligendi illo obcaecati optio vitae voluptatibus explicabo amet veniam reprehenderit.",
+			"Adipisci cumque id quam eos vel animi inventore placeat.",
+			"Eius fugiat cupiditate libero laborum pariatur earum nostrum tempore accusantium.",
+			"Facilis modi possimus quo eius mollitia harum adipisci amet reprehenderit tenetur.",
+			"Culpa incidunt velit, quidem suscipit, non aspernatur.",
+			"Qui esse quos nesciunt veritatis ut atque similique vel molestiae.",
+			"Quisquam quaerat inventore incidunt quibusdam, dolor ipsum at eligendi fugiat animi.",
+			"Dignissimos iure id incidunt rem."
+		],
+		"border": "#ffffff"
+	},
+	{
+		"title": "С какими проблемами безопасности СУБД вы сталкивались?",
+		"values": [115, 85, 70, 70, 65, 60, 35],
+		"legends": [
+			"Ошибки конфигурации (некорректно спроектированная структура БД, настройка «по умолчанию» при инсталляции и т.д.).",
+			"Некорректная настройка доступов (слабая аутентификация, излишние привилегии пользователей).",
+			"Инъекции кода на языке запросов.",
+			"Нестабильная работа (сбои по причине нехватки производительности и т.д.)",
+			"Отсутствие корректного управления уязвимостями.",
+			"Недостаточная глубина аудита и журналирования событий.",
+			"Отсутствие резервных копий."
+		],
+		"border": "#ffffff",
+		"icons": [
+			"icon-bus-09-b.svg",
+			"icon-apr-08-b.svg",
+			"icon-msc-36-b.svg",
+			"icon-dbs-21-b.svg",
+			"icon-com-38-b.svg",
+			"icon-set-03-b.svg",
+			"icon-apr-36-b.svg"
+		]
+	},
+	{
+		"title": "В какой отрасли представлена ваша компания?",
+		"values": [110, 100, 65, 40, 35, 25, 20, 20, 15, 15, 15, 10, 10, 10, 10],
+		"legends": [
+			"Информационные технологии",
+			"Государственный сектор",
+			"Финансовый сектор",
+			"Промышленность",
+			"Телекоммуникации и связь",
+			"Образование",
+			"Ритейл",
+			"Другое",
+			"Нефтегазовая отрасль",
+			"Наука и консалтинг",
+			"ТЭК",
+			"ОПК",
+			"Строительство",
+			"Логистика",
+			"Здравоохранение"
+		],
+		"border": "#ffffff"
+	}
+]

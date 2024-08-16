@@ -1,0 +1,37 @@
+.beam-1,
+.beam-2,
+.beam-3 {
+	overflow: hidden;
+	z-index: 1;
+}
+.beam-1::after,
+.beam-2::after,
+.beam-3::after {
+	position: absolute;
+	content: "";
+	width: 200%;
+	aspect-ratio: 1;
+	pointer-events: none;
+}
+
+.beam-1::after {
+	top: 0;
+	left: 0;
+	clip-path: polygon(-5% 0%, 100% 25%, 50% 35%);
+	background-image: linear-gradient(
+		to right,
+		hsl(var(--clr-1b), 0.75) 20%,
+		hsl(var(--clr-1a), 0.5) 50%
+	);
+}
+
+.beam-2::after {
+	top: 0;
+	right: 0;
+	clip-path: polygon(105% -5%, 0% 45%, 25% 100%);
+	background-image: linear-gradient(
+		to left,
+		hsl(var(--clr-1b), 0.5) 20%,
+		hsl(var(--clr-1a), 1) 60%
+	);
+}

@@ -1,0 +1,22 @@
+@layer common, components, parts, utilities, media;
+
+@import url(./common/fonts.css) layer(common);
+@import url(./common/root.css) layer(common);
+@import url(./common/typography.css) layer(common);
+@import url(./common/base.css) layer(common);
+@import url(./common/layout.css) layer(common);
+
+@import url(./components/brand-logo.css) layer(components);
+@import url(./components/scroll-snap.css) layer(components);
+@import url(./components/beams.css) layer(components);
+@import url(./components/nav-panel.css) layer(components);
+@import url(./components/slide-number.css) layer(components);
+@import url(./components/chart-doughnut.css) layer(components);
+
+@import url(./parts/slides.css) layer(parts);
+/* @import url(./parts/slide-1.css) layer(parts);
+@import url(./parts/slide-2.css) layer(parts);
+@import url(./parts/slide-3.css) layer(parts); */
+
+@import url(./common/utilities.css) layer(utilities);
+@import url(./common/media.css) layer(media);

@@ -1,0 +1,54 @@
+.chart {
+	--col: 3;
+	--x: 2;
+	--chart-size: 30rem;
+	--chart-w: var(--chart-size);
+	--chart-h: var(--chart-size);
+	/* --clr-solid: #bbbbbb; */
+	--clr-solid: hsl(var(--clr-0b));
+
+	display: grid;
+	grid-auto-flow: column;
+	gap: 4em;
+	place-items: center;
+	place-self: center;
+}
+
+.chart-box {
+	width: var(--chart-w, auto);
+	height: var(--chart-h, auto);
+}
+
+.chart-legend {
+	display: grid;
+	row-gap: 0.5em;
+	margin-top: 2em;
+}
+.chart-legend > * {
+	--marker-w: 2.5em;
+	--marker-h: 0.8em;
+	--marker-top: 0.3em;
+	--arrow-size: calc(var(--marker-h) / 2);
+
+	display: grid;
+	grid-template-columns: min-content auto;
+	gap: 1em;
+	position: relative;
+}
+.chart-legend > ::before {
+	content: "";
+	background-color: var(--segment-color);
+	width: var(--marker-w);
+	height: var(--marker-h);
+	margin-top: var(--marker-top);
+}
+.chart-legend > :hover::after {
+	position: absolute;
+	top: var(--marker-top);
+	left: var(--marker-w);
+	height: var(--marker-h);
+	content: "";
+	border-top: var(--arrow-size) solid transparent;
+	border-bottom: var(--arrow-size) solid transparent;
+	border-left: var(--arrow-size) solid var(--segment-color);
+}

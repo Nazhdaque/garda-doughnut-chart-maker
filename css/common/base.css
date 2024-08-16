@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:where(img, picture, canvas, svg) {
+	max-width: 100%;
+	display: block;
+}
+
+:where(ul, ol) {
+	list-style: none;
+}
+
+:where(a, button, address) {
+	cursor: pointer;
+	font-size: inherit;
+	font-style: inherit;
+	color: inherit;
+	border: none;
+	outline: none;
+	background: none;
+	text-decoration: none;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+	font-size: inherit;
+	font-weight: inherit;
+	display: inline-block;
+	word-break: break-word;
+}
+
+:where(h1, h2, h3, h4, h5, h6)::first-letter {
+	margin-left: -0.05em;
+}
+
+b {
+	font-weight: var(--fw-eb);
+}
+
+:where(p + *, ul + *) {
+	margin-top: 0.5em;
+}
+
+*::selection {
+	background-color: hsl(var(--clr-1b), 0.25);
+}
+
+* {
+	color: var(--clr-solid, var(--clr-0c));
+}
+
+html,
+body {
+	overflow-x: hidden;
+	scroll-padding-top: var(--header-height);
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	--overlay: hsla(0, 0%, 0%, 0.25);
+
+	font-family: var(--ff-rg);
+	font-weight: var(--fw-rg);
+	font-size: var(--fs-rg);
+	line-height: var(--lh-rg);
+
+	background-image: url(/images/bg.webp);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
