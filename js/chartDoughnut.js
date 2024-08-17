@@ -35,7 +35,7 @@ const getChartData = async () => {
 	const json = await API.get("charts-data.json");
 
 	const slide = () => html`
-		<article class="slide layout-center z-up">
+		<article class="slide layout-center z-up xl-bg-img-none">
 			<div class="slide-number"></div>
 
 			<div class="slide__top-group">
@@ -59,7 +59,7 @@ const getChartData = async () => {
 	`;
 
 	const chartSection = (title, legends, index) => html`
-		<section class="chart width-x">
+		<section class="chart width-x xl-gaf-row">
 			<figure class="chart-box">
 				<canvas></canvas>
 			</figure>

@@ -1,13 +1,10 @@
 /* |||||||||| |||||||||| |||||||||| |||||||||| xl */
 @media (width <= 1400px) {
-	.chart {
-		--chart-w: var(--chart-size);
-		--chart-h: var(--chart-size);
-
+	.xl-gaf-row {
 		grid-auto-flow: row;
 	}
 
-	.slide {
+	.xl-bg-img-none {
 		background-image: none;
 	}
 
@@ -20,12 +17,5 @@
 @media (width <= 768px) {
 	.sm-d-none {
 		display: none;
-	}
-}
-
-/* |||||||||| |||||||||| |||||||||| |||||||||| xs */
-@media (width <= 576px) {
-	.chart {
-		--chart-size: 90dvw;
 	}
 }

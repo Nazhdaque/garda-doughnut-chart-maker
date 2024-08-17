@@ -3,16 +3,16 @@
 	--clr-solid: hsl(var(--clr-0b));
 
 	counter-increment: slide-counter;
-	background-color: var(--clr-bg, initial);
 	position: relative;
 	padding-block: 4rem;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
+	background-color: var(--clr-bg, initial);
 	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
+	background-image: url(/images/bg-triangles-right-bottom-corner.svg);
+	background-size: 25dvw;
+	background-position: bottom 0 right 0;
 	row-gap: 4rem;
-
 	grid-auto-rows: min-content 1fr;
 	align-items: start;
 }
@@ -61,11 +61,4 @@
 	display: flex;
 	justify-content: space-between;
 	gap: 2em;
-}
-
-.slide {
-	background-image: url(/images/bg-triangles-right-bottom-corner.svg);
-	background-repeat: no-repeat;
-	background-size: 25dvw;
-	background-position: bottom 0 right 0;
 }

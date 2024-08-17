@@ -1,11 +1,9 @@
 .chart {
 	--col: 3;
 	--x: 2;
-	--chart-size: 30rem;
-	--chart-w: var(--chart-size);
-	--chart-h: var(--chart-size);
-	/* --clr-solid: #bbbbbb; */
+	--chart-size: min(30rem, 120%);
 	--clr-solid: hsl(var(--clr-0c));
+	/* --clr-solid: #bbbbbb; */
 
 	display: grid;
 	grid-auto-flow: column;
@@ -15,8 +13,8 @@
 }
 
 .chart-box {
-	width: var(--chart-w, auto);
-	height: var(--chart-h, auto);
+	width: var(--chart-size);
+	height: var(--chart-size);
 }
 
 .chart-legend {
