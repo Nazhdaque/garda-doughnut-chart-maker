@@ -7,20 +7,17 @@
 		grid-auto-flow: row;
 	}
 
-	.xl-order-0 {
-		order: 0;
-	}
-
 	.slide {
 		background-image: none;
+	}
+
+	.xl-order-0 {
+		order: 0;
 	}
 }
 
 /* |||||||||| |||||||||| |||||||||| |||||||||| sm */
 @media (width <= 768px) {
-	.chart {
-		--chart-size: 75dvw;
-	}
 	.sm-d-none {
 		display: none;
 	}

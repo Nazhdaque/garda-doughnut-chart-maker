@@ -5,7 +5,7 @@
 	--chart-w: var(--chart-size);
 	--chart-h: var(--chart-size);
 	/* --clr-solid: #bbbbbb; */
-	--clr-solid: hsl(var(--clr-0b));
+	--clr-solid: hsl(var(--clr-0c));
 
 	display: grid;
 	grid-auto-flow: column;

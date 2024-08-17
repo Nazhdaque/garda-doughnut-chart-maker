@@ -1,8 +1,8 @@
 import Chart from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-import { FetchWrapper } from "../helpers.js";
+import { FetchWrapper } from "./helpers.js";
+import { getNav } from "./getNav.js";
 import { html, render } from "lit-html";
-import { getNav } from "../getNav.js";
 
 let palette = [
 	"#0bbafa",
@@ -143,6 +143,7 @@ const getChartData = async () => {
 			.querySelectorAll(".slide")
 			.forEach((slide, i) => render(sections[i], slide));
 	};
+
 	getSlides(document.querySelector(".main-content"));
 	getNav();
 

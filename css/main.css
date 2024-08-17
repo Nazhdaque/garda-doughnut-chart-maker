@@ -14,9 +14,6 @@
 @import url(./components/chart-doughnut.css) layer(components);
 
 @import url(./parts/slides.css) layer(parts);
-/* @import url(./parts/slide-1.css) layer(parts);
-@import url(./parts/slide-2.css) layer(parts);
-@import url(./parts/slide-3.css) layer(parts); */
 
 @import url(./common/utilities.css) layer(utilities);
 @import url(./common/media.css) layer(media);

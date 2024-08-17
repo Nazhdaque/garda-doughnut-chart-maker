@@ -1,12 +1,10 @@
 .beam-1,
-.beam-2,
-.beam-3 {
+.beam-2 {
 	overflow: hidden;
 	z-index: 1;
 }
 .beam-1::after,
-.beam-2::after,
-.beam-3::after {
+.beam-2::after {
 	position: absolute;
 	content: "";
 	width: 200%;

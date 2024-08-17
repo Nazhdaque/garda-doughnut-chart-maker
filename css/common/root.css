@@ -49,11 +49,4 @@
 	--logo-x: 310.52;
 	--logo-y: 49.85;
 	--logo-height: calc((var(--logo-size) / var(--logo-x)) * var(--logo-y));
-
-	--header-top: 1rem;
-	--header-bottom: var(--header-top);
-	--header-height: calc(
-		var(--header-top) + var(--logo-height) + var(--header-bottom)
-	);
-	--main-height: calc(100% - var(--header-height) * 2);
 }
