@@ -2,7 +2,8 @@ import Chart from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { FetchWrapper } from "./helpers.js";
 import { getNav } from "./getNav.js";
-import { html, render } from "lit-html";
+import { slide, chartSection, li } from "./html.js";
+import { render } from "lit-html";
 
 let palette = [
 	"#0bbafa",
@@ -15,13 +16,15 @@ let palette = [
 	"#1cbab3",
 	"#a4897a",
 ];
-const colors = [...palette];
+
 const mobile = 576;
+
 const getPairs = (items, values) => {
 	const pairs = {};
 	if (items) for (const [i, key] of items.entries()) pairs[key] = values[i];
 	return pairs;
 };
+
 const sortPairs = items => {
 	const pairs = new Map();
 	Object.keys(items)
@@ -30,101 +33,88 @@ const sortPairs = items => {
 	return pairs;
 };
 
-const API = new FetchWrapper("data/");
-const getChartData = async () => {
-	const json = await API.get("charts-data.json");
+const sortDescending = json => {
+	const values = [];
+	const sortedJson = [];
+	json.forEach(dataset => {
+		const { title, values: vals, legends, border, icons } = dataset;
+		const sortedDataset = {
+			title,
+			values: [],
+			legends: [],
+			border,
+			icons,
+		};
 
-	const slide = () => html`
-		<article class="slide layout-center z-up xl-bg-img-none">
-			<div class="slide-number"></div>
+		for (const [legend, value] of sortPairs(getPairs(legends, vals))) {
+			sortedDataset.values.unshift(Number.parseInt(value, 10));
+			sortedDataset.legends.unshift(legend);
+		}
 
-			<div class="slide__top-group">
-				<div class="slide-ttl z-up width-x">
-					<h1 class="fs-2xl fw-eb">
-						Lorem ipsum <span class="txt-gradient">dolor sit</span>
-					</h1>
-					<p class="fs-lg txt-gradient">
-						Officia laudantium eos iusto, velit cupiditate esse ipsa placeat eum
-						tempora amet error dolores rerum illo saepe
-					</p>
-				</div>
-				<a
-					href="https://garda.ai/"
-					class="brand-logo sm-d-none"
-					aria-label="home">
-					<img src="./images/logo-b.svg" alt="brand-logo" />
-				</a>
-			</div>
-		</article>
-	`;
+		for (const [icon, __] of sortPairs(getPairs(icons, vals)))
+			sortedDataset.icons.unshift(icon);
 
-	const chartSection = (title, legends, index) => html`
-		<section class="chart width-x xl-gaf-row">
-			<figure class="chart-box">
-				<canvas></canvas>
-			</figure>
+		sortedJson.push(sortedDataset);
+		values.push(sortedDataset.values);
+	});
 
-			<div class="${index % 2 ? "order-down xl-order-0" : null}">
-				<h2 class="fs-xl fw-eb txt-gradient chart-title">${title}</h2>
-				<ul class="chart-legend">
-					${legends}
-				</ul>
-			</div>
-		</section>
-	`;
+	return {
+		sortedJson,
+		values,
+	};
+};
 
-	const li = (value, legend, border, icons, i) => html`<li
-		data-value=${value ? value : 0}
-		data-color=${palette ? palette[i] : `red`}
-		data-border=${border ? border : `red`}
-		data-icon=${icons ? `./images/icons/${icons[i]}` : ``}>
-		${legend}
-	</li>`;
+const getSlides = (json, sections) => {
+	const slides = [];
+	json.forEach(dataset => slides.push(slide()));
+	render(slides, document.querySelector(".main-content"));
+	document
+		.querySelectorAll(".slide")
+		.forEach((slide, i) => render(sections[i], slide));
+};
 
+const getSections = sortedData => {
 	const legends = [];
 	const sections = [];
-	const values = [];
+	const colors = [...palette];
 
-	const sortDescending = json => {
-		const sortedJson = [];
-		json.forEach(dataset => {
-			const { title, values: vals, legends, border, icons } = dataset;
-			const sortedDataset = {
-				title,
-				values: [],
-				legends: [],
-				border,
-				icons,
-			};
-
-			for (const [legend, value] of sortPairs(getPairs(legends, vals))) {
-				sortedDataset.values.unshift(Number.parseInt(value, 10));
-				sortedDataset.legends.unshift(legend);
-			}
-
-			for (const [icon, __] of sortPairs(getPairs(icons, vals)))
-				sortedDataset.icons.unshift(icon);
-
-			sortedJson.push(sortedDataset);
-			values.push(sortedDataset.values);
-		});
-
-		return sortedJson;
-	};
-
-	sortDescending(json).forEach((entry, index) => {
+	sortedData.sortedJson.forEach((entry, index) => {
 		const chartLegends = [];
 		entry.values.forEach((value, i) => {
-			value === values[index][i - 1] &&
+			value === sortedData.values[index][i - 1] &&
 				palette.splice(i, palette[i], palette[i - 1]);
 			chartLegends.push(
-				li(value, entry.legends[i], entry.border, entry.icons, i)
+				li(palette, value, entry.legends[i], entry.border, entry.icons, i)
 			);
 		});
 		legends.push(chartLegends);
 		sections.push(chartSection(entry.title, legends[index], index));
 		palette = [...colors];
 	});
+
+	return sections;
+};
+
+const chartData = items => {
+	const values = [];
+	const colors = ["#ffffff"];
+	const icons = [];
+
+	items.forEach((item, i) => {
+		values.push(Number.parseFloat(item.dataset.value, 10));
+		colors.splice(i, colors[i], item.dataset.color);
+		item.style.setProperty("--segment-color", item.dataset.color);
+		item.dataset.icon && icons.push(item.dataset.icon);
+		item.dataset.border && (colors[colors.length - 1] = item.dataset.border);
+	});
+	return { values, colors, icons };
+};
+
+const API = new FetchWrapper("data/");
+const getChartData = async () => {
+	const json = await API.get("charts-data.json");
+	const sortedData = sortDescending(json);
+	const sections = getSections(sortedData);
 
 	// const getElements = array => {
 	// 	const elements = [];
@@ -135,33 +125,8 @@ const getChartData = async () => {
 	// render(sections.splice(0, 2), containers[1]);
 	// render(sections[0], containers[0]);
 
-	const getSlides = slideBox => {
-		const slides = [];
-		json.forEach(dataset => slides.push(slide()));
-		render(slides, slideBox);
-		document
-			.querySelectorAll(".slide")
-			.forEach((slide, i) => render(sections[i], slide));
-	};
-
-	getSlides(document.querySelector(".main-content"));
+	getSlides(json, sections);
 	getNav();
-
-	/* |||||||||| |||||||||| |||||||||| |||||||||| */
-	const chartData = items => {
-		const values = [];
-		const colors = ["#2c313b"];
-		const icons = [];
-
-		items.forEach((item, i) => {
-			values.push(Number.parseFloat(item.dataset.value, 10));
-			colors.splice(i, colors[i], item.dataset.color);
-			item.style.setProperty("--segment-color", item.dataset.color);
-			item.dataset.icon && icons.push(item.dataset.icon);
-			item.dataset.border && (colors[colors.length - 1] = item.dataset.border);
-		});
-		return { values, colors, icons };
-	};
 
 	const data = [];
 	const canvas = [];
@@ -185,7 +150,9 @@ const getChartData = async () => {
 					const clr =
 						chart.config.data.datasets[chart._active[0].datasetIndex]
 							.hoverBackgroundColor[chart._active[0].index];
-					ctx.font = "800 3.5em Proxima Nova";
+					ctx.font = `800 ${
+						window.outerWidth <= mobile ? 2.5 + "em" : 3.5 + "em"
+					} Proxima Nova`;
 					ctx.fillStyle = clr;
 					ctx.textAlign = "center";
 					ctx.textBaseline = "middle";

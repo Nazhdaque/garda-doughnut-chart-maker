@@ -1,7 +1,7 @@
 [
 	{
 		"title": "Lorem ipsum dolor sit",
-		"values": [17, 32, 25, 68, 72, 45, 53, 25, 9],
+		"values": [17, 32, 25, 68, 72, 45, 53, 9, 25],
 		"legends": [
 			"Magnam consequuntur debitis quia, ducimus sint architecto autem.",
 			"Eligendi illo obcaecati optio vitae voluptatibus explicabo amet veniam reprehenderit.",
@@ -12,8 +12,7 @@
 			"Qui esse quos nesciunt veritatis ut atque similique vel molestiae.",
 			"Quisquam quaerat inventore incidunt quibusdam, dolor ipsum at eligendi fugiat animi.",
 			"Dignissimos iure id incidunt rem."
-		],
-		"border": "#ffffff"
+		]
 	},
 	{
 		"title": "С какими проблемами безопасности СУБД вы сталкивались?",
@@ -27,7 +26,6 @@
 			"Недостаточная глубина аудита и журналирования событий.",
 			"Отсутствие резервных копий."
 		],
-		"border": "#ffffff",
 		"icons": [
 			"icon-bus-09-b.svg",
 			"icon-apr-08-b.svg",
@@ -57,7 +55,6 @@
 			"Строительство",
 			"Логистика",
 			"Здравоохранение"
-		],
-		"border": "#ffffff"
+		]
 	}
 ]
