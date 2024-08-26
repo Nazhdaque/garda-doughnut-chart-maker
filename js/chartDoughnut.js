@@ -79,16 +79,15 @@ const getSections = sortedData => {
 	const colors = [...palette];
 
 	sortedData.sortedJson.forEach((entry, index) => {
+		const { title, values, legends: descrs, border, icons } = entry;
 		const chartLegends = [];
-		entry.values.forEach((value, i) => {
+		values.forEach((value, i) => {
 			value === sortedData.values[index][i - 1] &&
 				palette.splice(i, palette[i], palette[i - 1]);
-			chartLegends.push(
-				li(palette, value, entry.legends[i], entry.border, entry.icons, i)
-			);
+			chartLegends.push(li(palette, value, descrs[i], border, icons, i));
 		});
 		legends.push(chartLegends);
-		sections.push(chartSection(entry.title, legends[index], index));
+		sections.push(chartSection(title, legends[index], index));
 		palette = [...colors];
 	});
 
@@ -101,11 +100,12 @@ const chartData = items => {
 	const icons = [];
 
 	items.forEach((item, i) => {
-		values.push(Number.parseFloat(item.dataset.value, 10));
-		colors.splice(i, colors[i], item.dataset.color);
-		item.style.setProperty("--segment-color", item.dataset.color);
-		item.dataset.icon && icons.push(item.dataset.icon);
-		item.dataset.border && (colors[colors.length - 1] = item.dataset.border);
+		const { value, color, border, icon } = item.dataset;
+		values.push(Number.parseFloat(value, 10));
+		colors.splice(i, colors[i], color);
+		item.style.setProperty("--segment-color", color);
+		icon && icons.push(icon);
+		border && (colors[colors.length - 1] = border);
 	});
 	return { values, colors, icons };
 };

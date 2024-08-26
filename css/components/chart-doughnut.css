@@ -9,23 +9,23 @@
 	grid-auto-flow: column;
 	gap: 4em;
 	place-items: center;
-	place-self: center;
+	place-self: start center;
 }
 
 .chart-box {
 	width: var(--chart-size);
-	height: var(--chart-size);
+	aspect-ratio: 1;
 }
 
 .chart-legend {
 	display: grid;
-	row-gap: 0.5em;
+	row-gap: 0.4em;
 	margin-top: 2em;
 }
 .chart-legend > * {
-	--marker-w: 2.5em;
+	--marker-w: 2.4em;
 	--marker-h: 0.8em;
-	--marker-top: 0.3em;
+	--marker-top: 0.4em;
 	--arrow-size: calc(var(--marker-h) / 2);
 
 	display: grid;
