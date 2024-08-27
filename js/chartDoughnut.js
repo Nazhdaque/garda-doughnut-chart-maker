@@ -1,6 +1,6 @@
 import Chart from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-import { FetchWrapper } from "./helpers.js";
+import { FetchWrapper, getCustomPropsValues } from "./helpers.js";
 import { getNav } from "./getNav.js";
 import { slide, chartSection, li } from "./html.js";
 import { render } from "lit-html";
@@ -51,7 +51,7 @@ const sortDescending = json => {
 			sortedDataset.legends.unshift(legend);
 		}
 
-		for (const [icon, __] of sortPairs(getPairs(icons, vals)))
+		for (const [icon] of sortPairs(getPairs(icons, vals)))
 			sortedDataset.icons.unshift(icon);
 
 		sortedJson.push(sortedDataset);
@@ -94,9 +94,17 @@ const getSections = sortedData => {
 	return sections;
 };
 
-const chartData = items => {
+const getBorders = slides => {
+	const bgColors = [];
+	slides.forEach(slide =>
+		bgColors.push(getCustomPropsValues(slide, ["--clr-bg"]))
+	);
+	return bgColors.flat();
+};
+
+const chartData = (items, slides, index) => {
 	const values = [];
-	const colors = ["#ffffff"];
+	const colors = [getBorders(slides)[index]];
 	const icons = [];
 
 	items.forEach((item, i) => {
@@ -116,15 +124,6 @@ const getChartData = async () => {
 	const sortedData = sortDescending(json);
 	const sections = getSections(sortedData);
 
-	// const getElements = array => {
-	// 	const elements = [];
-	// 	array.forEach(item => elements.push(document.querySelector(item)));
-	// 	return elements;
-	// };
-	// const containers = getElements([".__slide-1", ".__slide-2", ".__slide-3"]);
-	// render(sections.splice(0, 2), containers[1]);
-	// render(sections[0], containers[0]);
-
 	getSlides(json, sections);
 	getNav();
 
@@ -132,7 +131,13 @@ const getChartData = async () => {
 	const canvas = [];
 
 	document.querySelectorAll(".chart").forEach((item, i) => {
-		data.push(chartData(item.querySelectorAll(".chart-legend > *")));
+		data.push(
+			chartData(
+				item.querySelectorAll(".chart-legend > *"),
+				document.querySelectorAll(".slide"),
+				i
+			)
+		);
 		canvas.push(item.querySelector(".chart canvas"));
 
 		const labelCenter = {

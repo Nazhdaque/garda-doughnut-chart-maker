@@ -17,6 +17,11 @@
 	align-items: start;
 }
 
+/* .slide:nth-child(2n-1) {
+	--clr-bg: hsl(var(--clr-0b));
+	--clr-solid: hsl(var(--clr-0a));
+} */
+
 /* top right beam */
 .slide:before {
 	position: absolute;

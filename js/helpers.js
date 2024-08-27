@@ -27,3 +27,14 @@ export class FetchWrapper {
 	post = (endpoint, body) => this.#send("post", endpoint, body);
 	delete = (endpoint, body) => this.#send("delete", endpoint, body);
 }
+
+export const getCustomPropsValues = (
+	element = document.documentElement,
+	props
+) => {
+	const values = [];
+	props.forEach(prop =>
+		values.push(getComputedStyle(element, null).getPropertyValue(prop))
+	);
+	return values;
+};
