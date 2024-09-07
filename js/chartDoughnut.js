@@ -318,3 +318,19 @@ const getChartData = async () => {
 };
 
 getChartData();
+
+// {
+// 	"title": "Lorem ipsum dolor sit",
+// 	"values": [17, 32, 25, 68, 72, 45, 53, 9, 25],
+// 	"legends": [
+// 		"Magnam consequuntur debitis quia, ducimus sint architecto autem.",
+// 		"Eligendi illo obcaecati optio vitae voluptatibus explicabo amet veniam reprehenderit.",
+// 		"Adipisci cumque id quam eos vel animi inventore placeat.",
+// 		"Eius fugiat cupiditate libero laborum pariatur earum nostrum tempore accusantium.",
+// 		"Facilis modi possimus quo eius mollitia harum adipisci amet reprehenderit tenetur.",
+// 		"Culpa incidunt velit, quidem suscipit, non aspernatur.",
+// 		"Qui esse quos nesciunt veritatis ut atque similique vel molestiae.",
+// 		"Quisquam quaerat inventore incidunt quibusdam, dolor ipsum at eligendi fugiat animi.",
+// 		"Dignissimos iure id incidunt rem."
+// 	]
+// },
