@@ -29,8 +29,8 @@ export class FetchWrapper {
 }
 
 export const getCustomPropsValues = (
-	element = document.documentElement,
-	props
+	props,
+	element = document.documentElement
 ) => {
 	const values = [];
 	props.forEach(prop =>

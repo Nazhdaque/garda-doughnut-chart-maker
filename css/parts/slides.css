@@ -1,7 +1,8 @@
-.slide {
-	--clr-bg: hsl(var(--clr-0a));
-	--clr-solid: hsl(var(--clr-0b));
+[data-theme="black"] .slide {
+	background-image: none;
+}
 
+.slide {
 	counter-increment: slide-counter;
 	position: relative;
 	padding-block: 4rem;
@@ -15,6 +16,7 @@
 	row-gap: 4rem;
 	grid-auto-rows: min-content 1fr;
 	align-items: start;
+	/* transition: background-color 1s ease-out; */
 }
 
 /* .slide:nth-child(2n-1) {

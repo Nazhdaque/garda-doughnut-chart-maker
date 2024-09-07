@@ -1,9 +1,12 @@
+[data-theme="black"] .chart {
+	--clr-solid: #bbbbbb;
+}
+
 .chart {
 	--col: 3;
 	--x: 2;
 	--chart-size: min(30rem, 120%);
 	--clr-solid: hsl(var(--clr-0c));
-	/* --clr-solid: #bbbbbb; */
 
 	display: grid;
 	grid-auto-flow: column;

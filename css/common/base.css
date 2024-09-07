@@ -75,3 +75,12 @@ body {
 	position: relative;
 	overflow: hidden;
 }
+
+[data-theme="white"] {
+	--clr-bg: hsl(var(--clr-0a));
+	--clr-solid: hsl(var(--clr-0b));
+}
+[data-theme="black"] {
+	--clr-bg: hsl(var(--clr-0b));
+	--clr-solid: hsl(var(--clr-0a));
+}

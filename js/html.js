@@ -14,12 +14,12 @@ export const slide = () => html`
 					tempora amet error dolores rerum illo saepe
 				</p>
 			</div>
-			<a
-				href="https://garda.ai/"
-				class="brand-logo sm-d-none"
-				aria-label="home">
+			<button class="brand-logo sm-d-none toggle" aria-label="toggle theme">
 				<img src="./images/logo-b.svg" alt="brand-logo" />
-			</a>
+				<!-- <svg class="o-fit-contain">
+					<use xlink:href="./images/logo-sprite.svg#logo"></use>
+				</svg> -->
+			</button>
 		</div>
 	</article>
 `;

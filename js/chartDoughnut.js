@@ -19,6 +19,47 @@ let palette = [
 
 const mobile = 576;
 
+const swapImages = (img, theme = "white") => {
+	let alt = "";
+	theme !== "black"
+		? (alt = img.replace("-w.", "-b."))
+		: (alt = img.replace("-b.", "-w."));
+	return alt;
+};
+
+const toggleLogo = theme => {
+	document
+		.querySelectorAll(".brand-logo img")
+		.forEach(item => item.setAttribute("src", swapImages(item.src, theme)));
+};
+
+const getTheme = () => document.documentElement.getAttribute("data-theme");
+
+const setTheme = theme => {
+	document.documentElement.setAttribute("data-theme", theme);
+	toggleLogo(theme);
+};
+
+const toggleTheme = theme =>
+	theme !== "black" ? setTheme("black") : setTheme("white");
+
+const setChartTheme = chart => {
+	const clr = getCustomPropsValues(["--clr-bg"]);
+	const theme = getTheme();
+
+	chart.config.data.datasets[0].borderColor = clr;
+	chart.config.data.datasets[0].hoverBorderColor = clr;
+	const icons = chart.config.data.datasets[0].icons;
+
+	if (icons.length > 0) {
+		const alt = [];
+		icons.forEach(icon => alt.push(swapImages(icon, theme)));
+		chart.config.data.datasets[0].icons = alt;
+	}
+
+	chart.update();
+};
+
 const getPairs = (items, values) => {
 	const pairs = {};
 	if (items) for (const [i, key] of items.entries()) pairs[key] = values[i];
@@ -66,11 +107,19 @@ const sortDescending = json => {
 
 const getSlides = (json, sections) => {
 	const slides = [];
+
 	json.forEach(dataset => slides.push(slide()));
 	render(slides, document.querySelector(".main-content"));
+
 	document
 		.querySelectorAll(".slide")
 		.forEach((slide, i) => render(sections[i], slide));
+
+	document
+		.querySelectorAll(".toggle")
+		.forEach(toggle =>
+			toggle.addEventListener("click", () => toggleTheme(getTheme()))
+		);
 };
 
 const getSections = sortedData => {
@@ -97,7 +146,7 @@ const getSections = sortedData => {
 const getBorders = slides => {
 	const bgColors = [];
 	slides.forEach(slide =>
-		bgColors.push(getCustomPropsValues(slide, ["--clr-bg"]))
+		bgColors.push(getCustomPropsValues(["--clr-bg"], slide))
 	);
 	return bgColors.flat();
 };
@@ -105,17 +154,18 @@ const getBorders = slides => {
 const chartData = (items, slides, index) => {
 	const values = [];
 	const colors = [getBorders(slides)[index]];
-	const icons = [];
+	let icons = new Set();
 
 	items.forEach((item, i) => {
 		const { value, color, border, icon } = item.dataset;
 		values.push(Number.parseFloat(value, 10));
 		colors.splice(i, colors[i], color);
 		item.style.setProperty("--segment-color", color);
-		icon && icons.push(icon);
+		icon && icons.add(icon);
 		border && (colors[colors.length - 1] = border);
 	});
-	return { values, colors, icons };
+
+	return { values, colors, icons: Array.from(icons) };
 };
 
 const API = new FetchWrapper("data/");
@@ -139,6 +189,13 @@ const getChartData = async () => {
 			)
 		);
 		canvas.push(item.querySelector(".chart canvas"));
+
+		const toggleTheme = {
+			id: "toggleTheme",
+			beforeDatasetsDraw(chart) {
+				setChartTheme(chart);
+			},
+		};
 
 		const labelCenter = {
 			id: "labelCenter",
@@ -181,8 +238,9 @@ const getChartData = async () => {
 					const x = chart.getDatasetMeta(0).data[i].tooltipPosition().x;
 					const y = chart.getDatasetMeta(0).data[i].tooltipPosition().y;
 					ctx.beginPath();
-					ctx.arc(x, y, iconSize / 1.25, 0, angle * 360, false);
-					ctx.fillStyle = "white";
+					!icon.src.includes("undefined") &&
+						ctx.arc(x, y, iconSize / 1.25, 0, angle * 360, false);
+					ctx.fillStyle = getCustomPropsValues(["--clr-bg"]);
 					ctx.fill();
 					ctx.drawImage(
 						icon,
@@ -200,9 +258,13 @@ const getChartData = async () => {
 			plugins: [
 				ChartDataLabels,
 				labelCenter,
+				toggleTheme,
 				data[i].icons.length !== 0 && segmentIcon,
 			],
 			options: {
+				animations: {
+					colors: false,
+				},
 				plugins: {
 					tooltip: { enabled: false },
 					legend: { display: false },
@@ -252,7 +314,7 @@ const getChartData = async () => {
 			},
 		};
 
-		new Chart(canvas[i], config);
+		const chart = new Chart(canvas[i], config);
 	});
 };
 
