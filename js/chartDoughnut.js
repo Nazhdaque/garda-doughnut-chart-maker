@@ -238,8 +238,7 @@ const getChartData = async () => {
 					const x = chart.getDatasetMeta(0).data[i].tooltipPosition().x;
 					const y = chart.getDatasetMeta(0).data[i].tooltipPosition().y;
 					ctx.beginPath();
-					!icon.src.includes("undefined") &&
-						ctx.arc(x, y, iconSize / 1.25, 0, angle * 360, false);
+					ctx.arc(x, y, iconSize / 1.25, 0, angle * 360, false);
 					ctx.fillStyle = getCustomPropsValues(["--clr-bg"]);
 					ctx.fill();
 					ctx.drawImage(
