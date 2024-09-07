@@ -1,17 +1,17 @@
 [
 	{
-		"title": "Lorem ipsum dolor sit",
-		"values": [17, 32, 25, 68, 72, 45, 53, 9, 25],
+		"title": "Что умеет делать",
+		"values": [987, 610, 377, 233, 144, 144, 89, 55, 34, 21],
 		"legends": [
-			"Magnam consequuntur debitis quia, ducimus sint architecto autem.",
-			"Eligendi illo obcaecati optio vitae voluptatibus explicabo amet veniam reprehenderit.",
-			"Adipisci cumque id quam eos vel animi inventore placeat.",
-			"Eius fugiat cupiditate libero laborum pariatur earum nostrum tempore accusantium.",
-			"Facilis modi possimus quo eius mollitia harum adipisci amet reprehenderit tenetur.",
-			"Culpa incidunt velit, quidem suscipit, non aspernatur.",
-			"Qui esse quos nesciunt veritatis ut atque similique vel molestiae.",
-			"Quisquam quaerat inventore incidunt quibusdam, dolor ipsum at eligendi fugiat animi.",
-			"Dignissimos iure id incidunt rem."
+			"Получает данные из .json;",
+			"сортирует значения по убыванию и считает проценты;",
+			"для каждого набора данных создает отдельный слайд с графиком и его легендой.",
+			"Предусмотрена возможность вставлять иконки в сегменты (см. следующий слайд).",
+			"Сегменты с одинаковым значением — одноцветные.",
+			"Сегменты с одинаковым значением получают одинаковый цвет.",
+			"Предусмотрена светлая и темная темы оформления, меняются по клику на логотип.",
+			"Выглядит адекватно на любых актуальных разрешениях и устройствах, поэтому можно делать вертикальные скриншоты.",
+			"Исходное числовое значение отображается по наведению курсора на сегмент."
 		]
 	},
 	{

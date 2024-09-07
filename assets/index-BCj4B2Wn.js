@@ -38,11 +38,12 @@ var Pr=Object.defineProperty;var Ls=i=>{throw TypeError(i)};var Dr=(i,t,e)=>t in
 		<div class="slide__top-group">
 			<div class="slide-ttl z-up width-x">
 				<h1 class="fs-2xl fw-eb">
-					Lorem ipsum <span class="txt-gradient">dolor sit</span>
+					Средство автопостроения
+					<span class="txt-gradient">кольцевых диаграмм</span>
 				</h1>
 				<p class="fs-lg txt-gradient">
-					Officia laudantium eos iusto, velit cupiditate esse ipsa placeat eum
-					tempora amet error dolores rerum illo saepe
+					Для создания скриншота рекомендуется активировать полноэкранный режим
+					браузера
 				</p>
 			</div>
 			<button class="brand-logo sm-d-none toggle" aria-label="toggle theme">
