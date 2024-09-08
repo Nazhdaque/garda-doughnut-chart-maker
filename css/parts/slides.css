@@ -16,13 +16,8 @@
 	row-gap: 4rem;
 	grid-auto-rows: min-content 1fr;
 	align-items: start;
-	/* transition: background-color 1s ease-out; */
+	box-shadow: 0 0 4rem 1rem hsl(var(--clr-1b));
 }
-
-/* .slide:nth-child(2n-1) {
-	--clr-bg: hsl(var(--clr-0b));
-	--clr-solid: hsl(var(--clr-0a));
-} */
 
 /* top right beam */
 .slide:before {

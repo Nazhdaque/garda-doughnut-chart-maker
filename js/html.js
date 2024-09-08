@@ -11,15 +11,11 @@ export const slide = () => html`
 					<span class="txt-gradient">кольцевых диаграмм</span>
 				</h1>
 				<p class="fs-lg txt-gradient">
-					Для создания скриншота рекомендуется активировать полноэкранный режим
-					браузера
+					Делать скриншоты рекомендуется в полноэкранном режиме браузера
 				</p>
 			</div>
 			<button class="brand-logo sm-d-none toggle" aria-label="toggle theme">
 				<img src="./images/logo-b.svg" alt="brand-logo" />
-				<!-- <svg class="o-fit-contain">
-					<use xlink:href="./images/logo-sprite.svg#logo"></use>
-				</svg> -->
 			</button>
 		</div>
 	</article>
