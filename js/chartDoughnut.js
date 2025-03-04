@@ -12,8 +12,8 @@ let palette = [
 	"#863dc6",
 	"#b7d8fe",
 	"#dfb5ff",
-	"#f9b232",
 	"#1cbab3",
+	"#f9b232",
 	"#a4897a",
 ];
 
@@ -204,22 +204,28 @@ const getChartData = async () => {
 				ctx.save();
 				const xAxis = chart.getDatasetMeta(0).data[0].x;
 				const yAxis = chart.getDatasetMeta(0).data[0].y;
-				if (chart._active.length > 0) {
-					const numLabel =
-						chart.config.data.datasets[chart._active[0].datasetIndex].data[
-							chart._active[0].index
-						];
-					const clr =
-						chart.config.data.datasets[chart._active[0].datasetIndex]
-							.hoverBackgroundColor[chart._active[0].index];
-					ctx.font = `800 ${
-						window.outerWidth <= mobile ? 2.5 + "em" : 3.5 + "em"
-					} Proxima Nova`;
-					ctx.fillStyle = clr;
-					ctx.textAlign = "center";
-					ctx.textBaseline = "middle";
-					ctx.fillText(`${numLabel}`, xAxis, yAxis);
-				}
+				// if (chart._active.length > 0) {
+				// const numLabel =
+				// 	chart.config.data.datasets[chart._active[0].datasetIndex].data[
+				// 		chart._active[0].index
+				// 	];
+				// const clr =
+				// 	chart.config.data.datasets[chart._active[0].datasetIndex]
+				// 		.hoverBackgroundColor[chart._active[0].index];
+				ctx.font = `800 ${
+					window.outerWidth <= mobile ? 2.5 + "em" : 3.5 + "em"
+				} Proxima Nova`;
+				// ctx.fillStyle = clr;
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+				// ctx.fillText(`${numLabel}`, xAxis, yAxis);
+
+				ctx.fillStyle = "#9b4fd6";
+				ctx.fillText(`2024`, xAxis, yAxis);
+				// ctx.fillStyle = "#2baae2";
+				// ctx.fillText(`2023`, xAxis, yAxis);
+
+				// }
 				ctx.restore();
 			},
 		};
@@ -284,7 +290,7 @@ const getChartData = async () => {
 						font: ctx => {
 							return {
 								family: "Proxima Nova",
-								size: window.outerWidth <= mobile ? ctx.chart.width / 24 : 28,
+								size: window.outerWidth <= mobile ? ctx.chart.width / 24 : 24,
 								weight: window.outerWidth <= mobile ? "normal" : "bold",
 							};
 						},
@@ -334,3 +340,64 @@ getChartData();
 // 		"Dignissimos iure id incidunt rem."
 // 	]
 // },
+
+// [
+// 	{
+// 		"title": "Что умеет делать",
+// 		"values": [987, 610, 377, 233, 144, 144, 89, 55, 34, 21],
+// 		"legends": [
+// 			"Получает данные из .json;",
+// 			"сортирует значения по убыванию и считает проценты;",
+// 			"для каждого набора данных создает cлайд с графиком и легендой.",
+// 			"Предусмотрена возможность вставлять иконки в сегменты (см. следующий слайд).",
+// 			"Сегменты с одинаковым значением — одноцветные.",
+// 			"Сегменты с одинаковым значением получают одинаковый цвет.",
+// 			"Cветлая и темная темы оформления, меняются по клику на логотип.",
+// 			"Выглядит адекватно на любых актуальных разрешениях и устройствах, можно делать вертикальные скриншоты.",
+// 			"Исходное числовое значение отображается по наведению курсора на сегмент."
+// 		]
+// 	},
+// 	{
+// 		"title": "С какими проблемами безопасности СУБД вы сталкивались?",
+// 		"values": [115, 85, 70, 70, 65, 60, 35],
+// 		"legends": [
+// 			"Ошибки конфигурации (некорректно спроектированная структура БД, настройка «по умолчанию» при инсталляции и т.д.).",
+// 			"Некорректная настройка доступов (слабая аутентификация, излишние привилегии пользователей).",
+// 			"Инъекции кода на языке запросов.",
+// 			"Нестабильная работа (сбои по причине нехватки производительности и т.д.)",
+// 			"Отсутствие корректного управления уязвимостями.",
+// 			"Недостаточная глубина аудита и журналирования событий.",
+// 			"Отсутствие резервных копий."
+// 		],
+// 		"icons": [
+// 			"icon-bus-09-b.svg",
+// 			"icon-apr-08-b.svg",
+// 			"icon-msc-36-b.svg",
+// 			"icon-dbs-21-b.svg",
+// 			"icon-com-38-b.svg",
+// 			"icon-set-03-b.svg",
+// 			"icon-apr-36-b.svg"
+// 		]
+// 	},
+// 	{
+// 		"title": "В какой отрасли представлена ваша компания?",
+// 		"values": [110, 100, 65, 40, 35, 25, 20, 20, 15, 15, 15, 10, 10, 10, 10],
+// 		"legends": [
+// 			"Информационные технологии",
+// 			"Государственный сектор",
+// 			"Финансовый сектор",
+// 			"Промышленность",
+// 			"Телекоммуникации и связь",
+// 			"Образование",
+// 			"Ритейл",
+// 			"Другое",
+// 			"Нефтегазовая отрасль",
+// 			"Наука и консалтинг",
+// 			"ТЭК",
+// 			"ОПК",
+// 			"Строительство",
+// 			"Логистика",
+// 			"Здравоохранение"
+// 		]
+// 	}
+// ]

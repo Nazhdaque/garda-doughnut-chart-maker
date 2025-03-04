@@ -13,6 +13,7 @@
 	gap: 4em;
 	place-items: center;
 	place-self: center;
+	/* place-self: start center; */
 }
 
 .chart-box {
@@ -20,15 +21,20 @@
 	aspect-ratio: 1;
 }
 
+.chart-title {
+	max-width: 22ch;
+}
+
 .chart-legend {
 	display: grid;
 	row-gap: 0.4em;
 	margin-top: 2em;
+	font-size: 1.5em;
 }
 .chart-legend > * {
 	--marker-w: 2em;
 	--marker-h: 0.8em;
-	--marker-top: 0.25em;
+	--marker-top: 0.333em;
 	--arrow-size: calc(var(--marker-h) / 2);
 
 	display: grid;

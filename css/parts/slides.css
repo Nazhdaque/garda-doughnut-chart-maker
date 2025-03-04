@@ -13,7 +13,7 @@
 	background-image: url(/images/bg-triangles-right-bottom-corner.svg);
 	background-size: 25dvw;
 	background-position: bottom 0 right 0;
-	row-gap: 4rem;
+	row-gap: 0rem;
 	grid-auto-rows: min-content 1fr;
 	align-items: start;
 	box-shadow: 0 0 4rem 1rem hsl(var(--clr-1b));
@@ -51,7 +51,7 @@
 
 .slide-ttl {
 	--col: 5;
-	--x: 4;
+	--x: 2;
 
 	max-width: fit-content;
 	display: grid;
