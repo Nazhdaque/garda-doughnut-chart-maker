@@ -1,5 +1,5 @@
 /* |||||||||| |||||||||| |||||||||| |||||||||| xl */
-@media (width <= 1400px) {
+@media (width < 1400px) {
 	.xl-gaf-row {
 		grid-auto-flow: row;
 	}
@@ -14,7 +14,7 @@
 }
 
 /* |||||||||| |||||||||| |||||||||| |||||||||| sm */
-@media (width <= 768px) {
+@media (width < 768px) {
 	.sm-d-none {
 		display: none;
 	}

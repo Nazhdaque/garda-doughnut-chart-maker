@@ -221,7 +221,7 @@ const getChartData = async () => {
 				// ctx.fillText(`${numLabel}`, xAxis, yAxis);
 
 				ctx.fillStyle = "#9b4fd6";
-				ctx.fillText(`2024`, xAxis, yAxis);
+				ctx.fillText(``, xAxis, yAxis);
 				// ctx.fillStyle = "#2baae2";
 				// ctx.fillText(`2023`, xAxis, yAxis);
 

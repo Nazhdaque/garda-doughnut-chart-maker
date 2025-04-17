@@ -9,10 +9,6 @@ export const slide = () => html`
 				<h1 class="fs-xl fw-eb">
 					<!-- Во сколько вы оцениваете <span class="txt-gradient">потери</span>,
 					связанные с утечкой своих персональных данных? -->
-					<!-- Как изменится ваше <span class="txt-gradient">отношение</span> к
-					компании, допустившей утечку ваших персональных данных? -->
-					<!-- С какими <span class="txt-gradient">последствиями</span> утечки
-					персональных данных вы сталкивались? -->
 				</h1>
 				<!-- <p class="fs-lg">
 					<span class="txt-gradient"
@@ -34,7 +30,8 @@ export const chartSection = (title, legends, index) => html`
 			<canvas></canvas>
 		</figure>
 
-		<div class="${index % 2 ? null : "order-down xl-order-0"}">
+		<!-- <div class="${index % 2 ? null : "order-down xl-order-0"}"> -->
+		<div class="order-up">
 			<h2 class="fs-xl fw-eb txt-gradient chart-title">${title}</h2>
 			<ul class="chart-legend">
 				${legends}

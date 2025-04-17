@@ -5,15 +5,21 @@
 .chart {
 	--col: 3;
 	--x: 2;
-	--chart-size: min(30rem, 120%);
 	--clr-solid: hsl(var(--clr-0c));
+	--chart-size: min(30rem, 120%);
 
 	display: grid;
 	grid-auto-flow: column;
 	gap: 4em;
 	place-items: center;
 	place-self: center;
-	/* place-self: start center; */
+	/* padding: 2rem; */
+
+	/* vertical */
+	--chart-size: 33rem;
+	place-self: start center !important;
+	max-width: var(--chart-size);
+	gap: 1em;
 }
 
 .chart-box {
@@ -22,14 +28,14 @@
 }
 
 .chart-title {
-	max-width: 22ch;
+	font-size: 1.75rem;
 }
 
 .chart-legend {
 	display: grid;
 	row-gap: 0.4em;
 	margin-top: 2em;
-	font-size: 1.5em;
+	font-size: 1.33em;
 }
 .chart-legend > * {
 	--marker-w: 2em;

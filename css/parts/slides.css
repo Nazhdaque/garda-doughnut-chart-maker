@@ -12,15 +12,20 @@
 	background-repeat: no-repeat;
 	background-image: url(/images/bg-triangles-right-bottom-corner.svg);
 	background-size: 25dvw;
-	background-position: bottom 0 right 0;
-	row-gap: 0rem;
+	background-position: bottom -1px right 0;
+
 	grid-auto-rows: min-content 1fr;
 	align-items: start;
 	box-shadow: 0 0 4rem 1rem hsl(var(--clr-1b));
+
+	/* row-gap: 4rem; */
+	/* row-gap: 2rem; */
+	/* grid-auto-rows: 1fr; */
 }
 
 /* top right beam */
 .slide:before {
+	display: none;
 	position: absolute;
 	content: "";
 	top: -1.25rem;
