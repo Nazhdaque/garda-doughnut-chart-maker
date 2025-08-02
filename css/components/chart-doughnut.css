@@ -7,6 +7,7 @@
 	--x: 2;
 	--clr-solid: hsl(var(--clr-0c));
 	--chart-size: min(30rem, 120%);
+	--chart-size: 30rem;
 
 	display: grid;
 	grid-auto-flow: column;
@@ -16,10 +17,9 @@
 	/* padding: 2rem; */
 
 	/* vertical */
-	--chart-size: 33rem;
 	place-self: start center !important;
 	max-width: var(--chart-size);
-	gap: 1em;
+	gap: 3em;
 }
 
 .chart-box {
@@ -29,6 +29,7 @@
 
 .chart-title {
 	font-size: 1.75rem;
+	text-wrap: balance;
 }
 
 .chart-legend {
@@ -36,6 +37,7 @@
 	row-gap: 0.4em;
 	margin-top: 2em;
 	font-size: 1.33em;
+	text-wrap: balance;
 }
 .chart-legend > * {
 	--marker-w: 2em;

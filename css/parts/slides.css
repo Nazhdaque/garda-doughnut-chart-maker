@@ -11,15 +11,16 @@
 	background-color: var(--clr-bg, initial);
 	background-repeat: no-repeat;
 	background-image: url(/images/bg-triangles-right-bottom-corner.svg);
-	background-size: 25dvw;
-	background-position: bottom -1px right 0;
+	background-size: 15dvw;
+	background-position: bottom -1px right -1px;
 
 	grid-auto-rows: min-content 1fr;
 	align-items: start;
 	box-shadow: 0 0 4rem 1rem hsl(var(--clr-1b));
 
-	/* row-gap: 4rem; */
-	/* row-gap: 2rem; */
+	/* vertical */
+	row-gap: 4rem;
+
 	/* grid-auto-rows: 1fr; */
 }
 

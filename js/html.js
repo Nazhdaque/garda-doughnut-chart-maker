@@ -2,21 +2,13 @@ import { html } from "lit-html";
 
 export const slide = () => html`
 	<article class="slide layout-center z-up xl-bg-img-none">
-		<!-- <div class="slide-number"></div> -->
+		<div class="slide-number"></div>
 
 		<div class="slide__top-group">
-			<div class="slide-ttl z-up width-x">
-				<h1 class="fs-xl fw-eb">
-					<!-- Во сколько вы оцениваете <span class="txt-gradient">потери</span>,
-					связанные с утечкой своих персональных данных? -->
-				</h1>
-				<!-- <p class="fs-lg">
-					<span class="txt-gradient"
-						>Отношение россиян к утечкам персональных данных</span
-					><br />
-					Исследование группы компаний «Гарда»
-				</p> -->
-			</div>
+			<!-- <div class="slide-ttl z-up width-x">
+				<h1 class="fs-xl fw-eb">Гарда DBF 5.3: новый релиз — новые фичи!</h1>
+				<p class="fs-xl txt-gradient">Результаты опроса</p>
+			</div> -->
 			<button class="brand-logo sm-d-none toggle" aria-label="toggle theme">
 				<img src="./images/logo-b.svg" alt="brand-logo" />
 			</button>
