@@ -5,17 +5,20 @@ import { getNav } from "./getNav.js";
 import { slide, chartSection, li } from "./html.js";
 import { render } from "lit-html";
 
-let palette = [
-	"#0bbafa",
-	"#b657ff",
-	"#0081cc",
-	"#863dc6",
-	"#b7d8fe",
-	"#dfb5ff",
-	"#1cbab3",
-	"#f9b232",
-	"#a4897a",
-];
+let palette = getCustomPropsValues([
+	"--violet-500",
+	"--cyan-500",
+	"--cyan-800",
+	"--violet-100",
+	"--warm-500",
+	"--warm-100",
+	"--warm-400",
+	"--warm-800",
+	"--violet-800",
+	"--violet-300",
+	"--cyan-300",
+	"--warm-200",
+]);
 
 const mobile = 576;
 
@@ -220,9 +223,9 @@ const getChartData = async () => {
 				ctx.textBaseline = "middle";
 				// ctx.fillText(`${numLabel}`, xAxis, yAxis);
 
-				ctx.fillStyle = "#9b4fd6";
+				ctx.fillStyle = palette[0];
 				ctx.fillText(``, xAxis, yAxis);
-				// ctx.fillStyle = "#2baae2";
+				// ctx.fillStyle = palette[1];
 				// ctx.fillText(`2023`, xAxis, yAxis);
 
 				// }
@@ -314,6 +317,7 @@ const getChartData = async () => {
 						borderWidth: window.outerWidth <= mobile ? 2 : 5,
 						hoverOffset: 25,
 						icons: data[i].icons,
+						// spacing: 5
 					},
 				],
 			},

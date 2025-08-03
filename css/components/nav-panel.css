@@ -11,8 +11,8 @@
 }
 
 .slide-list {
-	--clr-solid: hsl(var(--clr-0a));
-	--clr-item: hsl(var(--clr-1b));
+	--clr-solid: var(--white);
+	--clr-item: var(--cyan-500);
 	--time: 0.25s;
 
 	counter-reset: slide-counter 0;
@@ -59,7 +59,7 @@
 	transform: translateX(var(--overflow));
 }
 .slide-list > *.active {
-	--clr-item: hsl(var(--clr-1a));
+	--clr-item: var(--violet-500);
 }
 
 .slide-list a {

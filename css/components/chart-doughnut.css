@@ -1,11 +1,11 @@
 [data-theme="black"] .chart {
-	--clr-solid: #bbbbbb;
+	--clr-solid: var(--sapphire-200);
 }
 
 .chart {
 	--col: 3;
 	--x: 2;
-	--clr-solid: hsl(var(--clr-0c));
+	--clr-solid: var(--graphit-700);
 	--chart-size: min(30rem, 120%);
 	--chart-size: 30rem;
 
@@ -17,9 +17,9 @@
 	/* padding: 2rem; */
 
 	/* vertical */
-	place-self: start center !important;
+	/* place-self: start center !important;
 	max-width: var(--chart-size);
-	gap: 3em;
+	gap: 3em; */
 }
 
 .chart-box {

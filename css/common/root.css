@@ -2,51 +2,61 @@
 	font-size: clamp(14px, 1dvw + 1dvh + 0.5vmin, 18px);
 	--max-content-width: 100rem;
 
-	/* |||||||||| |||||||||| |||||||||| |||||||||| */
-	--clr-0a: #ffffff;
-	--clr-0a: 0, 0%, 100%;
-	--clr-0b: #2c313b;
-	--clr-0b: 220, 15%, 20%;
-	--clr-0c: #41464f;
-	--clr-0c: 219, 10%, 28%;
-	--clr-1a: #9b4fd6;
-	--clr-1a-h: 274;
-	--clr-1a-s: 62%;
-	--clr-1a-l: 57%;
-	--clr-1a: var(--clr-1a-h), var(--clr-1a-s), var(--clr-1a-l);
-	--clr-1b: #2baae2;
-	--clr-1b-h: 198;
-	--clr-1b-s: 76%;
-	--clr-1b-l: 53%;
-	--clr-1b: var(--clr-1b-h), var(--clr-1b-s), var(--clr-1b-l);
-	--clr-1b-1a: linear-gradient(
-		var(--deg, 30deg),
-		hsl(var(--clr-1b)) 0,
-		hsl(var(--clr-1a)) 100%
-	);
+	/* |||||||||| |||||||||| |||||||||| |||||||||| garda brand palette */
+	--white: #ffffff;
+	--graphit-700: #292c42;
 
-	--clr-2a: #863dc6;
-	--clr-2a: 272, 55%, 51%;
-	--clr-2b: #b657ff;
-	--clr-2b: 274, 100%, 67%;
-	--clr-2c: #dfb5ff;
-	--clr-2c: 274, 100%, 85%;
-	--clr-2d: #0081cc;
-	--clr-2d: 202, 100%, 40%;
-	--clr-2e: #0bbafa;
-	--clr-2e: 196, 96%, 51%;
-	--clr-2f: #b7d8fe;
-	--clr-2f: 212, 97%, 86%;
-	--clr-2g: #1cbab3;
-	--clr-2g: 177, 74%, 42%;
-	--clr-2h: #a4897a;
-	--clr-2h: 21, 19%, 56%;
-	--clr-2i: #f9b232;
-	--clr-2i: 39, 94%, 59%;
+	--cyan-100: #9cdeff;
+	--cyan-200: #59d7ff;
+	--cyan-300: #45cdff; /* chart-11 */
+	--cyan-400: #30c4ff;
+	--cyan-500: #15b8ff; /* chart-2 */
+	--cyan-600: #159be8;
+	--cyan-700: #0e7cd0;
+	--cyan-800: #075db9; /* chart-0 */
+	--cyan-900: #003ea1;
+
+	--violet-100: #ffb3fe; /* chart-4 */
+	--violet-200: #f79cff;
+	--violet-300: #e481ff; /* chart-10 */
+	--violet-400: #d265ff;
+	--violet-500: #bf4aff; /* chart-1 */
+	--violet-600: #ac38f0;
+	--violet-700: #9825e1;
+	--violet-800: #8413d1; /* chart-9 */
+	--violet-900: #7100c2;
+
+	--warm-100: #ffd754; /* chart-6 */
+	--warm-200: #fbba5e; /* chart-12 */
+	--warm-300: #f89e68;
+	--warm-400: #f48171; /* chart-7 */
+	--warm-500: #f0647b; /* chart-5 */
+	--warm-600: #d9587a;
+	--warm-700: #c34c79;
+	--warm-800: #ac4077; /* chart-8 */
+	--warm-900: #953476;
+
+	--cyan-300-alt: #8baaff;
+	--cyan-500-alt: #6786ff;
+	--violet-300-alt: #b198ff;
+	--violet-500-alt: #9964ff;
+	--sapphire-200: #ced5f0;
+	--sapphire-800: #2b367a;
+
+	--cyan-500-violet-500: linear-gradient(
+		30deg,
+		var(--cyan-500) 0%,
+		var(--violet-500) 100%
+	);
+	--cyan-300-violet-300: linear-gradient(
+		30deg,
+		var(--cyan-300) 0%,
+		var(--violet-300) 100%
+	);
 
 	/* |||||||||| |||||||||| |||||||||| |||||||||| */
 	--logo-size: 12rem;
-	--logo-x: 310.52;
-	--logo-y: 49.85;
+	--logo-x: 487;
+	--logo-y: 80;
 	--logo-height: calc((var(--logo-size) / var(--logo-x)) * var(--logo-y));
 }

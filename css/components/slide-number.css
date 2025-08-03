@@ -2,7 +2,7 @@
 	--img-size: 3em;
 	/* --overflow: calc(var(--img-size) / -4); */
 	--overflow: calc(var(--img-size) * -1);
-	--clr-solid: hsl(var(--clr-0a));
+	--clr-solid: var(--white);
 
 	font-size: var(--fs-sm);
 	font-weight: var(--fw-eb);
@@ -24,7 +24,7 @@
 	content: "";
 	border-left: var(--img-size) solid transparent;
 	border-right: var(--img-size) solid transparent;
-	border-top: var(--img-size) solid hsl(var(--clr-1a));
+	border-top: var(--img-size) solid var(--violet-500);
 }
 
 .slide-number::after {

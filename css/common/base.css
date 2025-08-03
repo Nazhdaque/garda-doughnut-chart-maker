@@ -46,11 +46,11 @@ b {
 }
 
 *::selection {
-	background-color: hsl(var(--clr-1b), 0.25);
+	background-color: hsl(from var(--violet-300-alt) h s l / 0.2);
 }
 
 * {
-	color: var(--clr-solid, var(--clr-0c));
+	color: var(--clr-solid, var(--graphit-700));
 }
 
 html,
@@ -77,10 +77,10 @@ body {
 }
 
 [data-theme="white"] {
-	--clr-bg: hsl(var(--clr-0a));
-	--clr-solid: hsl(var(--clr-0b));
+	--clr-bg: var(--white);
+	--clr-solid: var(--graphit-700);
 }
 [data-theme="black"] {
-	--clr-bg: hsl(var(--clr-0b));
-	--clr-solid: hsl(var(--clr-0a));
+	--clr-bg: var(--graphit-700);
+	--clr-solid: var(--white);
 }
