@@ -217,7 +217,7 @@ const getChartData = async () => {
 				// 		.hoverBackgroundColor[chart._active[0].index];
 				ctx.font = `800 ${
 					window.outerWidth <= mobile ? 2.5 + "em" : 3.5 + "em"
-				} Proxima Nova`;
+				} Geologica`;
 				// ctx.fillStyle = clr;
 				ctx.textAlign = "center";
 				ctx.textBaseline = "middle";
@@ -292,7 +292,7 @@ const getChartData = async () => {
 						},
 						font: ctx => {
 							return {
-								family: "Proxima Nova",
+								family: "Geologica",
 								size: window.outerWidth <= mobile ? ctx.chart.width / 24 : 24,
 								weight: window.outerWidth <= mobile ? "normal" : "bold",
 							};

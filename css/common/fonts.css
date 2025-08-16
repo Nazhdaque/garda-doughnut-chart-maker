@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
 	font-display: swap;
 	font-family: "Proxima Nova";
 	font-style: normal;
@@ -18,4 +18,11 @@
 	font-style: normal;
 	font-weight: 800;
 	src: url(/fonts/proxima-nova_extrabold.otf) format(opentype);
+} */
+
+@font-face {
+	font-family: "Geologica";
+	font-display: swap;
+	font-weight: 100 900;
+	src: url(/fonts/Geologica.ttf) format(truetype);
 }

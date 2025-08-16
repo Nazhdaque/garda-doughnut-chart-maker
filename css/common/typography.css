@@ -1,5 +1,6 @@
 :root {
-	--ff-rg: "Proxima Nova", sans-serif;
+	--ff-rg: "Geologica", sans-serif;
+	--fw-lt: 300;
 	--fw-rg: 400;
 	--fw-bd: 700;
 	--fw-eb: 800;
@@ -48,6 +49,9 @@
 }
 
 /* --- */
+.fw-lt {
+	font-weight: var(--fw-lt);
+}
 .fw-rg {
 	font-weight: var(--fw-rg);
 }

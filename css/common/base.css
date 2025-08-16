@@ -65,9 +65,10 @@ body {
 	--overlay: linear-gradient(var(--filter), var(--filter)); */
 
 	font-family: var(--ff-rg);
-	font-weight: var(--fw-rg);
+	font-weight: var(--fw-lt);
 	font-size: var(--fs-rg);
 	line-height: var(--lh-rg);
+	letter-spacing: -0.02em;
 
 	background-image: var(--overlay, none), url(/images/bg.webp);
 	background-repeat: no-repeat;
