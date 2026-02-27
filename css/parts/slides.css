@@ -9,23 +9,22 @@
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 	background-color: var(--clr-bg, initial);
-	background-repeat: no-repeat;
+	/* background-repeat: no-repeat;
 	background-image: url(/images/bg-triangles-right-bottom-corner.svg);
 	background-size: 15dvw;
-	background-position: bottom -1px right -1px;
+	background-position: bottom -1px right -1px; */
 
 	grid-auto-rows: min-content 1fr;
 	align-items: start;
 	box-shadow: 0 0 4rem 1rem var(--cyan-500);
 
 	/* vertical */
-	/* row-gap: 4rem; */
-
-	/* grid-auto-rows: 1fr; */
+	/* row-gap: 4rem;
+	grid-auto-rows: min-content; */
 }
 
 /* top right beam */
-.slide:before {
+.slide::before {
 	/* display: none; */
 	position: absolute;
 	content: "";

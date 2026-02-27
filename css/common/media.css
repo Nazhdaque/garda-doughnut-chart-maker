@@ -1,5 +1,11 @@
 /* |||||||||| |||||||||| |||||||||| |||||||||| xl */
 @media (width < 1400px) {
+	.chart {
+		place-self: start center !important;
+		max-width: var(--chart-size);
+		gap: 3em;
+	}
+
 	.xl-gaf-row {
 		grid-auto-flow: row;
 	}
@@ -10,6 +16,14 @@
 
 	.xl-order-0 {
 		order: 0;
+	}
+}
+
+/* |||||||||| |||||||||| |||||||||| |||||||||| md */
+@media (width < 992px) {
+	.slide {
+		row-gap: 4rem;
+		grid-auto-rows: min-content;
 	}
 }
 

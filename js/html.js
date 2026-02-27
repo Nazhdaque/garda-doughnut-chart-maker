@@ -2,7 +2,7 @@ import { html } from "lit-html";
 
 export const slide = () => html`
 	<article class="slide layout-center z-up xl-bg-img-none">
-		<div class="slide-number"></div>
+		<!-- <div class="slide-number"></div> -->
 
 		<div class="slide__top-group">
 			<!-- <div class="slide-ttl z-up width-x">

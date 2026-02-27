@@ -225,8 +225,9 @@ const getChartData = async () => {
 
 				ctx.fillStyle = palette[0];
 				ctx.fillText(``, xAxis, yAxis);
-				// ctx.fillStyle = palette[1];
-				// ctx.fillText(`2023`, xAxis, yAxis);
+				// === === === === === === === === === === текст внутри диаграммы
+				// ctx.fillStyle = palette[8];
+				// ctx.fillText(`2025`, xAxis, yAxis);
 
 				// }
 				ctx.restore();
@@ -288,7 +289,7 @@ const getChartData = async () => {
 								0
 							);
 							const percentage = (value / total) * 100;
-							return percentage.toFixed(0) + "%";
+							return Math.round(percentage).toFixed(0) + "%";
 						},
 						font: ctx => {
 							return {
